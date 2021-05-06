@@ -8,10 +8,10 @@ const id = params.get("id");
 
 console.log(id);
 
-const url = "https://makeup-api.herokuapp.com/api/v1/products.json/";
+const url = "https://makeup-api.herokuapp.com/api/v1/products/";
 const proxy = "https://noroffcors.herokuapp.com/";
 
-const corsFix = proxy + url + id;
+const corsFix = proxy + url + id + ".json/";
 
 console.log(corsFix);
 
@@ -33,6 +33,7 @@ fetchMakeup();
 
 function createHtml(detail) {
   detailContainer.innerHTML = `<h1>${detail.name}</h1>
-                                <div class="details-description">${detail.brand}</div>
-                                <time class="details-date">Released: ${detail.id}</time>`;
+                                <div class="details-description">${detail.price_sign}${detail.price}</div>
+                                <br>
+                                <div class="details-description">${detail.description}</div>`;
 }
